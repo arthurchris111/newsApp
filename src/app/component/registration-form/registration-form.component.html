@@ -11,9 +11,9 @@
       <div class="row justify-content-center">
         <div class="col-md-9">
           <div class="mb-4">
-            <h4 class="text-success">Welcome Back</h4>
-            <h2>Login to get started</h2>
-            <p class="opacity-75">The objective of <strong class="text-success">Green House Media</strong> is to
+            <h2 class="text-center text-success">Registration</h2>
+            <p class="opacity-75 text-center">The objective of <strong class="text-success">Green House Media</strong>
+              is to
               collect content and make it available to
               the news organizations such as newspaper, radio, television and digital media.</p>
           </div>
@@ -22,7 +22,7 @@
           <form [formGroup]="registration" (ngSubmit)="onSubmit(registration.value)">
             <!-- name -->
             <div class="form-floating mb-3">
-              <input type="name" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+              <input type="name" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
                 placeholder="First name" formControlName="name">
               <label for="floatingInput">First name</label>
               <div class="error"
@@ -35,7 +35,7 @@
 
             <!-- surname -->
             <div class="form-floating mb-3">
-              <input type="name" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+              <input type="name" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
                 placeholder="First name" formControlName="Surname">
               <label for="floatingInput">Surname</label>
               <div class="error"
@@ -48,7 +48,7 @@
 
             <!-- email -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+              <input type="email" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
                 placeholder="Email Address" formControlName="email">
               <label for="floatingInput">Email address</label>
               <div class="error"
@@ -63,8 +63,8 @@
             </div>
 
             <!-- password -->
-            <div class="form-floating">
-              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
               <div class="error"
@@ -80,7 +80,7 @@
 
             <!-- number -->
             <div class="form-floating">
-              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+              <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="number">
               <label for="floatingPassword">Phone number</label>
               <div class="error"
@@ -97,8 +97,11 @@
             <button class="btn btn-success p-2 w-100 mt-3" type="submit">Log In</button>
           </form>
           <div class="register mt-1">
-            <button class="border-0 "><a class="text-decoration-none text-success"> Already have an
-                account</a></button>
+
+            <a [routerLink]="['']" routerLinkActive="router-link-active" class="text-decoration-none text-success">
+              Already have an
+              account</a>
+
           </div>
         </div>
       </div>

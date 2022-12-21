@@ -4,7 +4,6 @@
     <div class="col-md-6 order-md-2">
       <img src="../assets/images/green.png" alt="Image" class="img-fluid">
     </div>
-
     <!-- text area -->
     <div class="col-md-6 contents">
       <div class="row justify-content-center">
@@ -19,12 +18,13 @@
 
           <!-- login form -->
           <form [formGroup]="signUp" (ngSubmit)="onSubmit(signUp.value)">
+            <!-- email -->
             <div class="form-floating mb-3">
               <input type="email" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
                 placeholder="Email Address" formControlName="email">
               <label for="floatingInput">Email address</label>
               <div class="error" *ngIf="(signUp.get('email')?.invalid && submitted)  || signUp.get('email')?.touched">
-                <small class="text-danger" *ngIf="signUp.get('email')?.errors?.['required'] ">
+                <small class="text-danger" *ngIf="signUp.get('email')?.errors?.['required']">
                   Email required
                 </small>
                 <small class="text-danger" *ngIf="signUp.get('email')?.errors?.['pattern']">
@@ -32,6 +32,7 @@
                 </small>
               </div>
             </div>
+            <!-- password -->
             <div class="form-floating">
               <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="password">
@@ -49,8 +50,10 @@
             <button class="btn btn-success p-2 w-100 mt-3" type="submit">Log In</button>
           </form>
           <div class="register mt-1">
-            <p>Don't have an account? <button class="border-0 bg-transparent"><a
-                  class="text-decoration-none text-success"> Register now</a></button> </p>
+            <p>Don't have an account?
+              <a [routerLink]="['/signup']" routerLinkActive="router-link-active"
+                class="text-decoration-none text-success"> Register now</a>
+            </p>
           </div>
         </div>
       </div>

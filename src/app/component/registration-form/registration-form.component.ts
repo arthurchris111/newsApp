@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators } from '@angular/forms';
-import { postReg } from 'src/postReg.model';
+import { postReg } from 'src/registration.model';
 
 @Component({
   selector: 'app-registration-form',

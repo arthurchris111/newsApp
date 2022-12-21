@@ -37,6 +37,5 @@ export class LoginFormComponent implements OnInit {
     this.signUp.reset();
     this.submitted = false
 
-    // this.userService.createAndStorePost(postData.email, postData.password)
   }
 }
