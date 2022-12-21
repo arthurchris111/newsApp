@@ -1,1 +1,90 @@
-<p>registration-form works!</p>
+<!-- <p>registration-form works!</p> -->
+<div class="container">
+  <div class="row vh-100 d-flex justify-content-center align-items-center">
+    <!-- image -->
+    <div class="col-md-6 order-md-2">
+      <img src="../assets/images/green.png" alt="Image" class="img-fluid">
+    </div>
+
+    <!-- text area -->
+    <div class="col-md-6 contents">
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <div class="mb-4">
+            <h4 class="text-success">Welcome Back</h4>
+            <h2>Login to get started</h2>
+            <p class="opacity-75">The objective of <strong class="text-success">Green House Media</strong> is to
+              collect content and make it available to
+              the news organizations such as newspaper, radio, television and digital media.</p>
+          </div>
+
+          <!-- login form -->
+          <form [formGroup]="registration" (ngSubmit)="onSubmit(registration.value)">
+            <!-- name -->
+            <div class="form-floating mb-3">
+              <input type="name" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+                placeholder="First name" formControlName="name">
+              <label for="floatingInput">First name</label>
+              <div class="error"
+                *ngIf="(registration.get('name')?.invalid && submitted) || registration.get('name')?.touched">
+                <small class="text-danger" *ngIf="registration.get('name')?.errors?.['required'] ">
+                  First name required
+                </small>
+              </div>
+            </div>
+
+            <!-- surname -->
+            <div class="form-floating mb-3">
+              <input type="name" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+                placeholder="First name" formControlName="Surname">
+              <label for="floatingInput">Surname</label>
+              <div class="error"
+                *ngIf="(registration.get('name')?.invalid && submitted) || registration.get('Surname')?.touched">
+                <small class="text-danger" *ngIf="registration.get('Surname')?.errors?.['required'] ">
+                  Surname required
+                </small>
+              </div>
+            </div>
+
+            <!-- email -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+                placeholder="Email Address" formControlName="email">
+              <label for="floatingInput">Email address</label>
+              <div class="error"
+                *ngIf="(registration.get('email')?.invalid && submitted) || registration.get('email')?.touched">
+                <small class="text-danger" *ngIf="registration.get('email')?.errors?.['required'] ">
+                  Email required
+                </small>
+                <small class="text-danger" *ngIf="registration.get('email')?.errors?.['pattern']">
+                  Email address is invalid
+                </small>
+              </div>
+            </div>
+
+            <!-- password -->
+            <div class="form-floating">
+              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+                placeholder="Password" formControlName="password">
+              <label for="floatingPassword">Password</label>
+              <div class="error"
+                *ngIf="(registration.get('password')?.invalid && submitted) || registration.get('password')?.touched">
+                <small class="text-danger" *ngIf="registration.get('password')?.errors?.['required'] ">
+                  Password required
+                </small>
+                <small class="text-danger" *ngIf="registration.get('password')?.errors?.['minlength']">
+                  Characters must be more than 8
+                </small>
+              </div>
+            </div>
+            <button class="btn btn-success p-2 w-100 mt-3" type="submit">Log In</button>
+          </form>
+          <div class="register mt-1">
+            <button class="border-0 "><a class="text-decoration-none text-success"> Already have an
+                account</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

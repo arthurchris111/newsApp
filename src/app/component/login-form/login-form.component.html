@@ -1,9 +1,5 @@
 <div class="container">
   <div class="row vh-100 d-flex justify-content-center align-items-center">
-    <!-- nav -->
-    <!-- <nav class="container">
-      <img src="../assets/images/media house.png" alt="image" width="100" height="100">
-    </nav> -->
     <!-- image -->
     <div class="col-md-6 order-md-2">
       <img src="../assets/images/green.png" alt="Image" class="img-fluid">
@@ -16,27 +12,45 @@
           <div class="mb-4">
             <h4 class="text-success">Welcome Back</h4>
             <h2>Login to get started</h2>
-            <p class="opacity-75">The objective of News <strong class="text-success">Green House Media</strong> is to
-              collect content
-              and make it
-              available to
+            <p class="opacity-75">The objective of <strong class="text-success">Green House Media</strong> is to
+              collect content and make it available to
               the news organizations such as newspaper, radio, television and digital media.</p>
           </div>
 
           <!-- login form -->
-          <form action="#" method="post">
+          <form [formGroup]="signUp" (ngSubmit)="onSubmit(signUp.value)">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control shadow-none" id="floatingInput" placeholder="name@example.com">
+              <input type="email" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+                placeholder="Email Address" formControlName="email">
               <label for="floatingInput">Email address</label>
+              <div class="error" *ngIf="(signUp.get('email')?.invalid && submitted)  || signUp.get('email')?.touched">
+                <small class="text-danger" *ngIf="signUp.get('email')?.errors?.['required'] ">
+                  Email required
+                </small>
+                <small class="text-danger" *ngIf="signUp.get('email')?.errors?.['pattern']">
+                  Email address is invalid
+                </small>
+              </div>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control shadow-none" id="floatingPassword" placeholder="Password">
+              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+                placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
+              <div class="error"
+                *ngIf="(signUp.get('password')?.invalid && submitted) || signUp.get('password')?.touched">
+                <small class="text-danger" *ngIf="signUp.get('password')?.errors?.['required'] ">
+                  Password required
+                </small>
+                <small class="text-danger" *ngIf="signUp.get('password')?.errors?.['minlength']">
+                  Characters must be more than 8
+                </small>
+              </div>
             </div>
             <button class="btn btn-success p-2 w-100 mt-3" type="submit">Log In</button>
           </form>
           <div class="register mt-1">
-            <p>Don't have an account?<a href="#" class="text-decoration-none text-success"> Register now</a></p>
+            <p>Don't have an account? <button class="border-0 "><a class="text-decoration-none text-success"> Register
+                  now</a></button> </p>
           </div>
         </div>
       </div>
