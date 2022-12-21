@@ -16,8 +16,6 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
 
-
-
   buildLoginForm(): void {
     this.signUp = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
@@ -28,8 +26,6 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.buildLoginForm();
   }
-
-
 
   onSubmit(postData: post) {
     this.submitted = true;

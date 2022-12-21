@@ -77,6 +77,23 @@
                 </small>
               </div>
             </div>
+
+            <!-- number -->
+            <div class="form-floating">
+              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+                placeholder="Password" formControlName="number">
+              <label for="floatingPassword">Phone number</label>
+              <div class="error"
+                *ngIf="(registration.get('number')?.invalid && submitted) || registration.get('number')?.touched">
+                <small class="text-danger" *ngIf="registration.get('number')?.errors?.['required'] ">
+                  Password required
+                </small>
+                <small class="text-danger" *ngIf="registration.get('number')?.errors?.['minlength']">
+                  Phone number must be 10 digits
+                </small>
+              </div>
+            </div>
+
             <button class="btn btn-success p-2 w-100 mt-3" type="submit">Log In</button>
           </form>
           <div class="register mt-1">
