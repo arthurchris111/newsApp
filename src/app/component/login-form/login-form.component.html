@@ -20,7 +20,7 @@
           <form [formGroup]="signUp" (ngSubmit)="onSubmit(signUp.value)">
             <!-- email -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control  shadow-sm p-3 bg-body rounded" id="floatingInput"
+              <input type="email" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
                 placeholder="Email Address" formControlName="email">
               <label for="floatingInput">Email address</label>
               <div class="error" *ngIf="(signUp.get('email')?.invalid && submitted)  || signUp.get('email')?.touched">
@@ -34,7 +34,7 @@
             </div>
             <!-- password -->
             <div class="form-floating">
-              <input type="password" class="form-control shadow-sm p-3 bg-body rounded" id="floatingPassword"
+              <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
               <div class="error"

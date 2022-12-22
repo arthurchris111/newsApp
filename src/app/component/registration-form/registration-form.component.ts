@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { postReg } from 'src/registration.model';
 
 @Component({
@@ -11,14 +11,14 @@ import { postReg } from 'src/registration.model';
 export class RegistrationFormComponent implements OnInit {
   registration!: FormGroup;
   submitted: boolean = false;
-  formBuilder: any;
+  // formBuilder: any;
 
-  constructor() { }
+  constructor(private FormBuilder:FormBuilder ) { }
 
   buildRegistrationForm(): void {
-    this.registration = this.formBuilder.group({
-      name: [''],
-      surname: [''],
+    this.registration = this.FormBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       number: [, [Validators.required, Validators.minLength(10)]]
