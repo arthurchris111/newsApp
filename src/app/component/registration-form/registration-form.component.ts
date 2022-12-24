@@ -17,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
 
   buildRegistrationForm(): void {
     this.registration = this.FormBuilder.group({
-      name: ['', Validators.required],
+      text: ['', Validators.required],
       surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -26,6 +26,7 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.buildRegistrationForm();
   }
 
   onSubmit(postData: postReg) {
