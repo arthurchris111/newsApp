@@ -36,11 +36,11 @@
             <!-- surname -->
             <div class="form-floating mb-3">
               <input type="text" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
-                placeholder="First name" formControlName="Surname">
+                placeholder="First name" formControlName="surname">
               <label for="floatingInput">Surname</label>
               <div class="error"
-                *ngIf="(registration.get('name')?.invalid && submitted) || registration.get('Surname')?.touched">
-                <small class="text-danger" *ngIf="registration.get('Surname')?.errors?.['required'] ">
+                *ngIf="(registration.get('surname')?.invalid && submitted) || registration.get('surname')?.touched">
+                <small class="text-danger" *ngIf="registration.get('surname')?.errors?.['required'] ">
                   Surname required
                 </small>
               </div>
@@ -65,7 +65,7 @@
             <!-- password -->
             <div class="form-floating mb-3">
               <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
-                placeholder="Password" formControlName="password">
+                placeholder="Password" formControlName="password" #pw>
               <label for="floatingPassword">Password</label>
               <div class="error"
                 *ngIf="(registration.get('password')?.invalid && submitted) || registration.get('password')?.touched">
@@ -78,25 +78,41 @@
               </div>
             </div>
 
-            <!-- number -->
-            <div class="form-floating">
-              <input type="number" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
-                placeholder="Phone" formControlName="number">
-              <label for="floatingPassword">Phone number</label>
-              <div class="error"
-                *ngIf="(registration.get('number')?.invalid && submitted) || registration.get('number')?.touched">
-                <small class="text-danger" *ngIf="registration.get('number')?.errors?.['required'] ">
+            <!--confirm password -->
+            <!-- <div class="form-floating mb-3">
+              <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
+                placeholder="Confirm Password" formControlName="confirmPassword">
+              <label for="floatingPassword">Confirm Password</label>
+              <div class="error" *ngIf="(registration.get('confirmPassword')?.invalid && submitted) ||
+                registration.get('confirmPassword')?.touched">
+                <small class="text-danger" *ngIf="registration.get('confirmPassword')?.errors?.['required'] ">
                   Password required
                 </small>
-                <small class="text-danger" *ngIf="registration.get('number')?.errors?.['minlength']">
-                  Phone number must be 10 digits
+
+                <small *ngIf="(registration.get('confirmPassword')?.value)">
+
                 </small>
               </div>
-            </div>
+            </div> -->
 
-            <button class="btn btn-success p-2 w-100 mt-3" type="submit">Register</button>
+            <!-- phone number -->
+            <!-- <div class="form-floating mb-2">
+              <input type="number" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
+                placeholder="phone" formControlName="phone">
+              <label for="floatingPassword">Phone number</label>
+              <div class="error" *ngIf="(registration.get('phone')?.invalid && submitted) ||
+                registration.get('phone')?.touched">
+                <small class="text-danger" *ngIf="registration.get('phone')?.errors?.['required'] ">
+                  Phone number required
+                </small>
+                <small class="text-danger" *ngIf="registration.get('phone')?.errors?.['minlength']">
+                  Must be 10 digits
+                </small>
+              </div>
+            </div> -->
+            <button class="btn btn-success p-2 w-100" type="submit">Register</button>
           </form>
-          <div class="register mt-1">
+          <div class="register mt-1 textce">
             <p>Already have an account?<a [routerLink]="['/']" routerLinkActive="router-link-active"
                 class="text-decoration-none text-success ">signUp</a></p>
           </div>

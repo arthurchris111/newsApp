@@ -8,6 +8,7 @@ import { LoginFormComponent } from './component/login-form/login-form.component'
 import { RegistrationFormComponent } from './component/registration-form/registration-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './component/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UsersComponent } from './component/users/users.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
