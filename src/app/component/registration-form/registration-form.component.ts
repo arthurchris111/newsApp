@@ -1,4 +1,3 @@
-// import { PostsService } from './../../../service/post.service';
 import { UsersComponent } from './../users/users.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -51,7 +50,6 @@ export class RegistrationFormComponent implements OnInit {
     this.submitted = false
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
-
 
   }
 }

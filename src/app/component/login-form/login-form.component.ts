@@ -24,6 +24,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.signUp;
     this.buildLoginForm();
   }
 
