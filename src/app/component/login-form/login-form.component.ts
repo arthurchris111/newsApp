@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostLogin } from 'src/app/post.model';
+import { PostsService } from 'src/service/post.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,10 +10,10 @@ import { PostLogin } from 'src/app/post.model';
   styleUrls: ['./login-form.component.css']
 })
 
-
 export class LoginFormComponent implements OnInit {
   signUp!: FormGroup;
   submitted: boolean = false;
+  PostsService: any;
 
   constructor(private formBuilder: FormBuilder) { }
 
