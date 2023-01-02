@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { post } from 'src/post.model';
+import { PostLogin } from 'src/app/post.model';
 
 @Component({
   selector: 'app-login-form',
@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
     this.buildLoginForm();
   }
 
-  onSubmit(postData: post) {
+  onSubmit(postData: PostLogin) {
     this.submitted = true;
 
     if (this.signUp.invalid) {

@@ -1,6 +1,5 @@
-export interface post {
-  name: any;
-  surname: any;
-  email:any;
-  password:any
+export interface PostLogin {
+  email: any;
+  password: any;
+
 }

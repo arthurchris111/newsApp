@@ -1,9 +1,12 @@
+// import { PostsService } from './../../../service/post.service';
+import { UsersComponent } from './../users/users.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { postReg } from 'src/registration.model';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { post } from 'src/post.model';
+import { HttpClient } from '@angular/common/http';
+import { postRegistration } from 'src/app/registration.model';
+import { PostsService } from 'src/service/post.service';
+
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -12,12 +15,12 @@ import { post } from 'src/post.model';
 export class RegistrationFormComponent implements OnInit {
   registration!: FormGroup;
   submitted: boolean = false;
-  route: any;
+  service: any;
+  // route: any;
 
 
   // formBuilder: any;
-
-  constructor(private FormBuilder:FormBuilder, private http: HttpClient) { }
+  constructor(private FormBuilder:FormBuilder, private http: HttpClient,private PostsService: PostsService, private route:Router ) { }
 
   buildRegistrationForm(): void {
     this.registration = this.FormBuilder.group({
@@ -34,14 +37,11 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   //sending http request
-  onCreatePost(postData:{name:any; surname:any;email:any; password:any}){
-    this.http.post('https://newsappuserdetails-default-rtdb.firebaseio.com/',postData).subscribe(responseData => { console.log(responseData)
-})
+  onCreatePost(postData:postRegistration){
+   this.PostsService.createAndStorePost(postData.name, postData.surname, postData.email, postData.password)
+ }
 
-  }
-
-
-  onSubmit(postData: postReg) {
+  onSubmit(postData: postRegistration) {
     this.submitted = true;
 
     if (this.registration.invalid) {
@@ -53,6 +53,9 @@ export class RegistrationFormComponent implements OnInit {
 
     this.registration.reset();
     this.submitted = false
+
+    this.service.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
+
 
   }
 }
