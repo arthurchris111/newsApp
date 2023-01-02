@@ -36,17 +36,13 @@ export class RegistrationFormComponent implements OnInit {
     this.buildRegistrationForm();
   }
 
-  //sending http request
- //   onCreatePost(postData:postRegistration){
- //    this.PostsService.createAndStorePost(postData.name, postData.surname, postData.email, postData.password)
- //  }
-
   onSubmit(postData: postRegistration) {
     this.submitted = true;
 
     if (this.registration.invalid) {
       return
     }else{
+      this.route.navigate(['login'])
     }
      console.log(this.registration.value)
 
