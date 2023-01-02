@@ -28,18 +28,18 @@ export class RegistrationFormComponent implements OnInit {
       surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-
     })
   }
 
   ngOnInit(): void {
+    this.registration;
     this.buildRegistrationForm();
   }
 
   //sending http request
-  onCreatePost(postData:postRegistration){
-   this.PostsService.createAndStorePost(postData.name, postData.surname, postData.email, postData.password)
- }
+ //   onCreatePost(postData:postRegistration){
+ //    this.PostsService.createAndStorePost(postData.name, postData.surname, postData.email, postData.password)
+ //  }
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;
@@ -54,7 +54,7 @@ export class RegistrationFormComponent implements OnInit {
     this.registration.reset();
     this.submitted = false
 
-    this.service.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
+    this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
 
 
   }
