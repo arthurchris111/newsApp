@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { postReg } from 'src/registration.model';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { post } from 'src/post.model';
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -16,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
 
   // formBuilder: any;
 
-  constructor(private FormBuilder:FormBuilder ) { }
+  constructor(private FormBuilder:FormBuilder, private http: HttpClient) { }
 
   buildRegistrationForm(): void {
     this.registration = this.FormBuilder.group({
@@ -31,6 +32,14 @@ export class RegistrationFormComponent implements OnInit {
   ngOnInit(): void {
     this.buildRegistrationForm();
   }
+
+  //sending http request
+  onCreatePost(postData:{name:any; surname:any;email:any; password:any}){
+    this.http.post('https://newsappuserdetails-default-rtdb.firebaseio.com/',postData).subscribe(responseData => { console.log(responseData)
+})
+
+  }
+
 
   onSubmit(postData: postReg) {
     this.submitted = true;
