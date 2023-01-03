@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { PostLogin } from 'src/app/post.model';
 import { PostsService } from 'src/service/post.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -13,9 +12,9 @@ import { PostsService } from 'src/service/post.service';
 export class LoginFormComponent implements OnInit {
   signUp!: FormGroup;
   submitted: boolean = false;
-  PostsService: any;
+  // PostsService: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private PostsService:PostsService, private route: Router) { }
 
   buildLoginForm(): void {
     this.signUp = this.formBuilder.group({
@@ -27,7 +26,14 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.signUp;
     this.buildLoginForm();
+    this.onfetchPosts();
   }
+
+
+//GET post
+onfetchPosts(){
+  this.PostsService.fetchPosts();
+}
 
   onSubmit(postData: PostLogin) {
     this.submitted = true;

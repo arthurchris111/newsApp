@@ -21,22 +21,21 @@ export class PostsService {
   }
 
   //fetch
-  private fetchPosts(){
+   fetchPosts(){
    this.http.get<any>('https://newsappuserdetails-default-rtdb.firebaseio.com/posts.json').subscribe(post => {
       const user = post.find((a:any)=>{
        return a.email === this.signUp.email.value && a.password === this.signUp.password.vale
       });
       console.log(post)
-       if(user){
-      this.signUp.reset()
-      this.route.navigate([''])
-     }
-     else{
-      alert('user not found')
-     }
+      //  if(user){
+      // this.signUp.reset()
+      // this.route.navigate(['/'])
+    //  }
+    //  else{
+    //   alert('user not found')
+    //  }
 
     });
-
 
 }
 }
