@@ -38,6 +38,10 @@ export class RegistrationFormComponent implements OnInit {
   onSubmit(postData: postRegistration) {
     this.submitted = true;
 
+     //saving user details to local storage
+    this.user = Object.assign(this.user, this.registration.value)
+    this.addUser(this.user)
+
     if (this.registration.invalid) {
       return
     }else{
@@ -46,12 +50,20 @@ export class RegistrationFormComponent implements OnInit {
      console.log(this.registration.value)
 
 
-    this.registration.reset();
+    // this.registration.reset();
     this.submitted = false
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
+  }
 
-    this.user = Object.assign(this.user, this.registration.value)
-    localStorage.setItem('Users', this.user)
+  addUser(user){
+    let users = []
+    if(localStorage.getItem('Users')){
+      users = JSON.parse(localStorage.getItem('Users'));
+      users = [user, ...users]
+    }else{
+      users = [user]
+    }
+    localStorage.setItem('Users',JSON.stringify(this.user))
   }
 }
