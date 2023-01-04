@@ -56,7 +56,7 @@ export class RegistrationFormComponent implements OnInit {
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
   }
 
-  addUser(user){
+  addUser(user: any){
     let users = []
     if(localStorage.getItem('Users')){
       users = JSON.parse(localStorage.getItem('Users'));
@@ -64,6 +64,6 @@ export class RegistrationFormComponent implements OnInit {
     }else{
       users = [user]
     }
-    localStorage.setItem('Users',JSON.stringify(this.user))
+    localStorage.setItem('Users',JSON.stringify(user))
   }
 }
