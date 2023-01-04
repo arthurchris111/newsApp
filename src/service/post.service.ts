@@ -41,10 +41,10 @@ export class PostsService {
       });
       console.log(responseData);
        if(user){
-      this.signUp.reset()
-      this.route.navigate(['/'])
-     }
-     else{
+        alert('Login Successfully')
+        this.signUp.reset()
+        this.route.navigate(['news'])
+     } else{
       alert('user not found')
      }
 

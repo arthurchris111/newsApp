@@ -40,6 +40,8 @@ onfetchPosts(){
 
     if (this.signUp.invalid) {
       return
+    }else{
+      this.route.navigate(['news'])
     }
 
     // this.signUp.reset();
