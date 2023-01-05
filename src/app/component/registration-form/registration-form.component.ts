@@ -40,30 +40,22 @@ export class RegistrationFormComponent implements OnInit {
 
      //saving user details to local storage
     this.user = Object.assign(this.user, this.registration.value)
-    this.addUser(this.user)
+    this.PostsService.addUser(this.user)
 
+    //route registration page to login if valid
     if (this.registration.invalid) {
       return
     }else{
       this.route.navigate(['login'])
     }
+
      console.log(this.registration.value)
 
-
-    // this.registration.reset();
+    this.registration.reset();
     this.submitted = false
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
   }
 
-  addUser(user: any){
-    let users = []
-    if(localStorage.getItem('Users')){
-      users = JSON.parse(localStorage.getItem('Users'));
-      users = [user, ...users]
-    }else{
-      users = [user]
-    }
-    localStorage.setItem('Users',JSON.stringify(user))
-  }
+
 }

@@ -5,11 +5,24 @@ import { postRegistration } from 'src/app/registration.model';
 import { GetPost } from 'src/app/getPost.model';
 import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
+
 export class PostsService {
   signUp: any;
   route: any;
 
   constructor(private http:HttpClient){}
+
+//saving user details to local storage
+  addUser(user: any){
+    let users = []
+    if(localStorage.getItem('Users')){
+      users = JSON.parse(localStorage.getItem('Users')as string)
+      users = [user, ...users]
+    }else{
+      users = [user]
+    }
+    localStorage.setItem('Users',JSON.stringify(user))
+  }
 
   //post
   createAndStorePost(name:any, surname:any, email:any, password:any ){
