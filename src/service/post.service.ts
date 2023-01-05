@@ -16,8 +16,8 @@ export class PostsService {
   addUser(user: any){
     let users = []
     if(localStorage.getItem('Users')){
-      users = JSON.parse(localStorage.getItem('Users')as string)
-      users = [user, ...users]
+      users = JSON.parse(localStorage.getItem('Users')as any)
+      users = [user,users]
     }else{
       users = [user]
     }
@@ -48,7 +48,6 @@ export class PostsService {
     //  } else{
     //   alert('user not found')
     // }
-
   });
  }
 }

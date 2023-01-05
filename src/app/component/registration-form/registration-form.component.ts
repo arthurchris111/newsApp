@@ -17,6 +17,7 @@ export class RegistrationFormComponent implements OnInit {
   service: any;
   // route: any;
   user:any = {}
+  userSubmitted:boolean = false;
 
   // formBuilder: any;
   constructor(private FormBuilder:FormBuilder, private http: HttpClient,private PostsService: PostsService, private route:Router ) { }
@@ -37,6 +38,7 @@ export class RegistrationFormComponent implements OnInit {
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;
+    this.userSubmitted = true;
 
      //saving user details to local storage
     this.user = Object.assign(this.user, this.registration.value)
@@ -53,6 +55,7 @@ export class RegistrationFormComponent implements OnInit {
 
     this.registration.reset();
     this.submitted = false
+    this.userSubmitted = false;
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
   }

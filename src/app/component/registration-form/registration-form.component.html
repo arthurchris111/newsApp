@@ -25,8 +25,8 @@
               <input type="text" class="form-control  shadow-sm bg-body rounded" id="floatingInput"
                 placeholder="First name" formControlName="name">
               <label for="floatingInput">First name</label>
-              <div class="error"
-                *ngIf="(registration.get('name')?.invalid && submitted) || registration.get('name')?.touched">
+              <div class="error" *ngIf="(registration.get('name')?.invalid && submitted) || (registration.get('name')?.touched &&
+                userSubmitted)">
                 <small class="text-danger" *ngIf="registration.get('name')?.errors?.['required'] ">
                   First name required
                 </small>
@@ -39,7 +39,7 @@
                 placeholder="First name" formControlName="surname">
               <label for="floatingInput">Surname</label>
               <div class="error"
-                *ngIf="(registration.get('surname')?.invalid && submitted) || registration.get('surname')?.touched">
+                *ngIf="(registration.get('surname')?.invalid && submitted) || (registration.get('surname')?.touched && userSubmitted)">
                 <small class="text-danger" *ngIf="registration.get('surname')?.errors?.['required'] ">
                   Surname required
                 </small>
@@ -52,7 +52,7 @@
                 placeholder="Email Address" formControlName="email">
               <label for="floatingInput">Email address</label>
               <div class="error"
-                *ngIf="(registration.get('email')?.invalid && submitted) || registration.get('email')?.touched">
+                *ngIf="(registration.get('email')?.invalid && submitted) || (registration.get('email')?.touched && userSubmitted)">
                 <small class="text-danger" *ngIf="registration.get('email')?.errors?.['required'] ">
                   Email required
                 </small>
@@ -68,7 +68,7 @@
                 placeholder="Password" formControlName="password" #pw>
               <label for="floatingPassword">Password</label>
               <div class="error"
-                *ngIf="(registration.get('password')?.invalid && submitted) || registration.get('password')?.touched">
+                *ngIf="(registration.get('password')?.invalid && submitted) || registration.get('password')?.touched && userSubmitted">
                 <small class="text-danger" *ngIf="registration.get('password')?.errors?.['required'] ">
                   Password required
                 </small>
