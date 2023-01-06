@@ -40,9 +40,7 @@ export class RegistrationFormComponent implements OnInit {
     this.submitted = true;
     this.userSubmitted = true;
 
-     //saving user details to local storage
-    this.user = Object.assign(this.user, this.registration.value)
-    this.PostsService.addUser(this.user)
+
 
     //route registration page to login if valid
     if (this.registration.invalid) {
@@ -50,6 +48,10 @@ export class RegistrationFormComponent implements OnInit {
     }else{
       this.route.navigate(['login'])
     }
+
+      //saving user details to local storage
+    this.user = Object.assign(this.user, this.registration.value)
+    this.PostsService.addUser(this.user)
 
      console.log(this.registration.value)
 

@@ -12,12 +12,12 @@ export class PostsService {
 
   constructor(private http:HttpClient){}
 
-//saving user details to local storage
+ //saving user details to local storage
   addUser(user: any){
     let users = []
     if(localStorage.getItem('Users')){
       users = JSON.parse(localStorage.getItem('Users')as any)
-      users = [user,users]
+      users = [user, ...users];
     }else{
       users = [user]
     }
@@ -50,6 +50,7 @@ export class PostsService {
     // }
   });
  }
+
 }
 
 
