@@ -40,7 +40,6 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.signUp;
     this.buildLoginForm();
-    // this.login();
     this.password = 'password';
   }
 
@@ -61,17 +60,12 @@ export class LoginFormComponent implements OnInit {
           userArray.push(responseData[key]);
         }
 
-        // console.log(userArray, '---------userArray');
-        // console.log(this.signUp.value, '---------this.signUp.value');
-
         const user = userArray.find((result: any) => {
           return (
             result.email === this.signUp.value.email &&
             result.password === this.signUp.value.password
           );
         });
-
-        // console.log(user, '---------this.user');
 
         if (user) {
           this.route.navigate(['news']);
