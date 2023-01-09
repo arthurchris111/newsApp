@@ -14,7 +14,6 @@ export class RegistrationFormComponent implements OnInit {
   registration!: FormGroup;
   submitted: boolean = false;
   show: boolean = false;
-  // service: any;
   user: any = {};
   userSubmitted: boolean = false;
 
