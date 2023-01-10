@@ -18,7 +18,7 @@ export class PostsService {
     let users = []
     if(localStorage.getItem('Users')){
       users = JSON.parse(localStorage.getItem('Users')as any)
-      users = [user, ...users];
+      users = [user, users];
     }else{
       users = [user]
     }
@@ -31,6 +31,7 @@ export class PostsService {
       name: name, surname: surname, email: email, password: password
     };
      this.http.post('https://newsappuserdetails-default-rtdb.firebaseio.com/posts.json',postData).subscribe(responseData =>{
+      console.log(responseData)
 
     });
   }
