@@ -15,11 +15,9 @@ export class RegistrationFormComponent implements OnInit {
   registration!: FormGroup;
   submitted: boolean = false;
   service: any;
-  // route: any;
   user:any = {}
   userSubmitted:boolean = false;
 
-  // formBuilder: any;
   constructor(private FormBuilder:FormBuilder, private http: HttpClient,private PostsService: PostsService, private route:Router ) { }
 
   buildRegistrationForm(): void {
@@ -34,13 +32,13 @@ export class RegistrationFormComponent implements OnInit {
   ngOnInit(): void {
     this.registration;
     this.buildRegistrationForm();
+    this.PostsService.getPosts();
   }
+
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;
     this.userSubmitted = true;
-
-
 
     //route registration page to login if valid
     if (this.registration.invalid) {
@@ -52,8 +50,7 @@ export class RegistrationFormComponent implements OnInit {
       //saving user details to local storage
     this.user = Object.assign(this.user, this.registration.value)
     this.PostsService.addUser(this.user)
-
-     console.log(this.registration.value)
+    console.log(this.registration.value)
 
     this.registration.reset();
     this.submitted = false

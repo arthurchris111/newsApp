@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   signUp!: FormGroup;
   submitted: boolean = false;
-  // PostsService: any;
+  isFetching: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private PostsService:PostsService, private route: Router) { }
 
@@ -26,14 +26,28 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.signUp;
     this.buildLoginForm();
-    this.onfetchPosts();
+    this.onGetPosts;
   }
 
 
 //GET post
-onfetchPosts(){
-  this.PostsService.fetchPosts();
-}
+ onGetPosts(){
+    this.isFetching = true
+    this.PostsService.getPosts().subscribe(responseData => {
+     this.isFetching = false
+    const user = responseData.find((a:any) => {
+      return a.email === this.signUp.value.email && a.password === this.signUp.value.password;
+    });
+    if(user){
+      alert('Login Successfully')
+      this.signUp.reset()
+      this.route.navigate(['news'])
+     } else{
+      alert('user not found')
+    }
+    })
+  }
+
 
   onSubmit(postData: PostLogin) {
     this.submitted = true;
@@ -41,7 +55,8 @@ onfetchPosts(){
     if (this.signUp.invalid) {
       return
     }else{
-      this.route.navigate(['news'])
+
+      // this.route.navigate(['news'])
     }
 
     // this.signUp.reset();
