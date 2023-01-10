@@ -1,3 +1,4 @@
+import { PostLogin } from 'src/app/post.model';
 import { UsersComponent } from './../users/users.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -35,6 +36,9 @@ export class RegistrationFormComponent implements OnInit {
     this.PostsService.getPosts();
   }
 
+  onCreateAndStorePosts(){
+
+  }
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;

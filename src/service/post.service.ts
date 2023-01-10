@@ -1,16 +1,17 @@
+import { Router } from '@angular/router';
 import { LoginFormComponent } from './../app/component/login-form/login-form.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { postRegistration } from 'src/app/registration.model';
-import { GetPost } from 'src/app/getPost.model';
-import { map } from 'rxjs/operators';
+// import { GetPost } from 'src/app/getPost.model';
+// import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
 
 export class PostsService {
   signUp: any;
-  route: any;
+  // route: any;
 
-  constructor(private http:HttpClient){}
+  constructor(private http:HttpClient, private route: Router){}
 
  //saving user details to local storage
   addUser(user: any){
@@ -30,7 +31,7 @@ export class PostsService {
       name: name, surname: surname, email: email, password: password
     };
      this.http.post('https://newsappuserdetails-default-rtdb.firebaseio.com/posts.json',postData).subscribe(responseData =>{
-     console.log(responseData);
+
     });
   }
 

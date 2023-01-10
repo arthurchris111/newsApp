@@ -33,7 +33,7 @@ export class LoginFormComponent implements OnInit {
  onGetPosts(){
     this.isFetching = true
     this.PostsService.getPosts().subscribe(responseData => {
-     this.isFetching = false
+    this.isFetching = false
     const user = responseData.find((a:any) => {
       return a.email === this.signUp.value.email && a.password === this.signUp.value.password;
     });
@@ -46,7 +46,6 @@ export class LoginFormComponent implements OnInit {
     }
     })
   }
-
 
   onSubmit(postData: PostLogin) {
     this.submitted = true;
