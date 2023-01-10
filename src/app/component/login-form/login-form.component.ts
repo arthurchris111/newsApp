@@ -55,8 +55,7 @@ export class LoginFormComponent implements OnInit {
     if (this.signUp.invalid) {
       return
     }else{
-
-      // this.route.navigate(['news'])
+      this.route.navigate(['news'])
     }
 
     // this.signUp.reset();
