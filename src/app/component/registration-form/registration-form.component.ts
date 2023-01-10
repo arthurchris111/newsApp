@@ -17,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
   submitted: boolean = false;
   // service: any;
   user:any = {}
-  // userSubmitted:boolean = false;
+  userSubmitted:boolean = false;
 
   constructor(private FormBuilder:FormBuilder, private http: HttpClient,private PostsService: PostsService, private route:Router ) { }
 
@@ -34,15 +34,16 @@ export class RegistrationFormComponent implements OnInit {
     this.registration;
     this.buildRegistrationForm();
     this.PostsService.getPosts();
-  }
-
-  onCreateAndStorePosts(){
 
   }
+
+  // onCreateAndStorePost(postData:postRegistration){
+  //   this.PostsService.createAndStorePost(postData.name,postData.surname,postData.email,postData.password)
+  // }
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;
-    // this.userSubmitted = true;
+    this.userSubmitted = true;
 
     //route registration page to login if valid
     if (this.registration.invalid) {
@@ -58,7 +59,7 @@ export class RegistrationFormComponent implements OnInit {
 
     this.registration.reset();
     this.submitted = false
-    // this.userSubmitted = false;
+    this.userSubmitted = false;
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
   }
