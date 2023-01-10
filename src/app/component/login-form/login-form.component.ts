@@ -60,4 +60,11 @@ export class LoginFormComponent implements OnInit {
     this.submitted = false
 
   }
+
+
+//toggle hide and show password
+
+
+
+
 }
