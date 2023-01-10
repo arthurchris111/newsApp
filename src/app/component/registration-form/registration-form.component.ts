@@ -14,9 +14,9 @@ import { PostsService } from 'src/service/post.service';
 export class RegistrationFormComponent implements OnInit {
   registration!: FormGroup;
   submitted: boolean = false;
-  service: any;
+  // service: any;
   user:any = {}
-  userSubmitted:boolean = false;
+  // userSubmitted:boolean = false;
 
   constructor(private FormBuilder:FormBuilder, private http: HttpClient,private PostsService: PostsService, private route:Router ) { }
 
@@ -38,7 +38,7 @@ export class RegistrationFormComponent implements OnInit {
 
   onSubmit(postData: postRegistration) {
     this.submitted = true;
-    this.userSubmitted = true;
+    // this.userSubmitted = true;
 
     //route registration page to login if valid
     if (this.registration.invalid) {
@@ -54,7 +54,7 @@ export class RegistrationFormComponent implements OnInit {
 
     this.registration.reset();
     this.submitted = false
-    this.userSubmitted = false;
+    // this.userSubmitted = false;
 
     this.PostsService.createAndStorePost(postData.name, postData.surname,postData.email,postData.password)
   }

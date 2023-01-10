@@ -29,7 +29,6 @@ export class LoginFormComponent implements OnInit {
     this.onGetPosts;
   }
 
-
 //GET post
  onGetPosts(){
     this.isFetching = true

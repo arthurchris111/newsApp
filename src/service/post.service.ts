@@ -42,13 +42,13 @@ export class PostsService {
       //  return a.email === this.signUp.email.value.email && a.password === this.signUp.password.value.password
       // });
   //     console.log(responseData);
-  //   //    if(user){
-  //   //     alert('Login Successfully')
-  //   //     this.signUp.reset()
-  //   //     this.route.navigate(['news'])
-  //   //  } else{
-  //   //   alert('user not found')
-  //   // }
+    //    if(user){
+    //     alert('Login Successfully')
+    //     this.signUp.reset()
+    //     this.route.navigate(['news'])
+    //  } else{
+    //   alert('user not found')
+    // }
   // });
  }
 }
@@ -56,7 +56,7 @@ export class PostsService {
 
 // .pipe(
 
-//     //Using RxJS Operators to Transform responseData into an array
+    //Using RxJS Operators to Transform responseData into an array
 //     map(responseData =>{
 //       const postArray = [];
 //       for(const key in responseData){
