@@ -3,7 +3,7 @@ import { LoginFormComponent } from './../app/component/login-form/login-form.com
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { postRegistration } from 'src/app/registration.model';
-// import { GetPost } from 'src/app/getPost.model';
+import { GetPost } from 'src/app/getPost.model';
 // import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
 
@@ -32,7 +32,6 @@ export class PostsService {
     };
      this.http.post('https://newsappuserdetails-default-rtdb.firebaseio.com/posts.json',postData).subscribe(responseData =>{
       console.log(responseData)
-
     });
   }
 
@@ -57,7 +56,6 @@ export class PostsService {
 
 
 // .pipe(
-
     //Using RxJS Operators to Transform responseData into an array
 //     map(responseData =>{
 //       const postArray = [];

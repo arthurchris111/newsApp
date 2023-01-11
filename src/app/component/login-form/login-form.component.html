@@ -37,9 +37,11 @@
               <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
-              <button class="d-flex float-end border-0 bg-transparent">
-                <img src="../assets/images/view.png" alt="Image" class="view img-fluid" height="30" width="30">
-                <img src="../assets/images/hide.png" alt="Image" class="hide img-fluid" height="30" width="30">
+              <button class="d-flex float-end border-0 bg-transparent" (click)="onClick()">
+                <img src="../assets/images/view.png" alt="Image" class="view img-fluid" height="30" width="30"
+                  *ngIf="!show">
+                <img src="../assets/images/hide.png" alt="Image" class="hide img-fluid" height="30" width="30"
+                  *ngIf="show">
               </button>
 
               <div class="error"
