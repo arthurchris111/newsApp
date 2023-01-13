@@ -67,9 +67,7 @@ export class LoginFormComponent implements OnInit {
           userArray.push(responseData[key]);
         }
         userArray.find((res: any) => {
-          this.user =
-            res.email === this.signUp.value.email &&
-            res.password === this.signUp.value.password;
+          this.user = res.email === this.signUp.value.email && res.password === this.signUp.value.password;
           console.log(this.user);
 
           if (this.user) {
