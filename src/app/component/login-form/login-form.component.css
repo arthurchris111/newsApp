@@ -13,3 +13,12 @@
   margin-top: -70px;
   margin-left: 10px;
 }
+
+.newImage:hover{
+  transform: scale(1.1);
+}
+
+.newImage{
+    transition: transform .2s;
+
+}
