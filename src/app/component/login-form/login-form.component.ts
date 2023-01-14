@@ -45,7 +45,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   //toggle hide and show password
-  onClick() {
+  togglePassword(){
     if (this.password === 'password') {
       this.password = 'text';
       this.show = true;
@@ -78,10 +78,10 @@ export class LoginFormComponent implements OnInit {
           }
         });
       }
-      ,
-      error: (err: any) => {
-        alert(err);
-      },
+      // ,
+      // error: (err: any) => {
+      //   alert(err);
+      // },
     });
   }
 
