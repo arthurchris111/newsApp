@@ -8,8 +8,8 @@
     <div class="col-md-6 contents">
       <div class="row justify-content-center">
         <div class="col-md-9">
-          <div class="mb-4 text-center">
-            <h4 class="text-success">Welcome Back</h4>
+          <div class="mb-4">
+            <h3 class="text-success">Welcome Back</h3>
             <h2>Login to get started</h2>
             <p class="opacity-75">The objective of <strong class="text-success">Green House Media</strong> is to
               collect content and make it available to
@@ -38,10 +38,10 @@
                 placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
               <button class="d-flex float-end border-0 bg-transparent" (click)="onClick()">
-                <img src="../assets/images/view.png" alt="Image" class="view img-fluid" height="30" width="30"
-                  *ngIf="!show">
+                <img src=" ../assets/images/view.png" alt="Image" class="view img-fluid" height="30" aria-hidden="true"
+                  width="30" *ngIf="!show">
                 <img src="../assets/images/hide.png" alt="Image" class="hide img-fluid" height="30" width="30"
-                  *ngIf="show">
+                  aria-hidden="true" *ngIf="show">
               </button>
 
               <div class="error"
@@ -59,7 +59,7 @@
             <button class="btn btn-success p-2 w-100 " type="submit">Login with gmail</button>
             <img class="gmail" src="../assets/images/gmail.png" alt="photo" width="20" height="20">
           </form>
-          <div class="register text-center">
+          <div class="register text-center mt-0">
             <p>Don't have an account?
               <a [routerLink]="['/signup']" routerLinkActive="router-link-active"
                 class="text-decoration-none text-success"> Register now</a>

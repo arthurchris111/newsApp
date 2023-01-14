@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
   signUp!: FormGroup;
   submitted: boolean = false;
   isFetching: boolean = false;
-  show = true;
+  show:boolean = true;
   password: any;
   user: boolean = false;
 
@@ -72,17 +72,16 @@ export class LoginFormComponent implements OnInit {
 
           if (this.user) {
             this.route.navigate(['news']);
-
             alert('Login Successfully');
           } else {
             alert('user not found');
           }
         });
       }
-      // ,
-      // error: (err: any) => {
-      //   alert(err);
-      // },
+      ,
+      error: (err: any) => {
+        alert(err);
+      },
     });
   }
 
