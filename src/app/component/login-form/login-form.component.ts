@@ -14,6 +14,7 @@ export class LoginFormComponent implements OnInit {
   submitted: boolean = false;
   isFetching: boolean = false;
   show: boolean = true;
+
   password: any;
   user: boolean = false;
 
