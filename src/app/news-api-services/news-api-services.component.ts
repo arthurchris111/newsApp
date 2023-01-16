@@ -19,4 +19,6 @@ export class NewsApiServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //newsApiUrl
+
 }
