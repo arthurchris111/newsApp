@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './component/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './component/news/news.component';
+import { NewsApiServicesComponent } from './news-api-services/news-api-services.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NewsComponent } from './component/news/news.component';
     RegistrationFormComponent,
     UsersComponent,
     NewsComponent,
+    NewsApiServicesComponent,
   ],
   imports: [
     BrowserModule,
