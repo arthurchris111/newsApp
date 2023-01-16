@@ -9,7 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './component/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './component/news/news.component';
-import { NewsApiServicesComponent } from './news-api-services/news-api-services.component';
+import { TopHeadingComponent } from './newsComponent/top-heading/top-heading.component';
+import { NewsApiServicesComponent } from './newsComponent/news-api-services/news-api-services.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NewsApiServicesComponent } from './news-api-services/news-api-services.
     RegistrationFormComponent,
     UsersComponent,
     NewsComponent,
+    TopHeadingComponent,
     NewsApiServicesComponent,
   ],
   imports: [
