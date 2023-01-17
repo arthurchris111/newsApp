@@ -1,3 +1,4 @@
+import { TechNewsComponent } from './component/tech-news/tech-news.component';
 import { TopHeadingComponent } from './component/top-heading/top-heading.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,8 +10,9 @@ const routes: Routes = [
   // { path: '', component: LoginFormComponent },
   // { path:'login', component: LoginFormComponent},
   // { path: 'signup', component: RegistrationFormComponent },
-  { path:'news', component:NewsComponent},
+  { path:'', component:NewsComponent},
   // { path: '', component:TopHeadingComponent}
+  {path:'tech', component:TechNewsComponent}
 // topHeading
 
 
