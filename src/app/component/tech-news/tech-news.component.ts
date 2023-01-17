@@ -12,19 +12,18 @@ export class TechNewsComponent implements OnInit {
   constructor(private service:newsApiService) { }
 
   ngOnInit(): void {
+    this.techNewsDisplay()
   }
 
 
-   //display data
+  //display data
   techNewsDisplay:any = []
-
-  onNewsHeader(){
+  onTechNewsHeader(){
     this.service.techNewsHeader().subscribe((result)=>{
       console.log(result);
       this.techNewsDisplay = result.articles;
 
     })
-
   }
 
 }

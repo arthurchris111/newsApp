@@ -1,1 +1,12 @@
-<p>tech-news works!</p>
+<div class="container">
+  <div class="row mt-4">
+    <h4 class="mb-3">TECHNOLOGY NEWS</h4>
+    <div class="col-lg-3" *ngFor="let display of techNewsDisplay">
+      <div class="card border-0 mb-4">
+        <img class="urlToImage" src="{{display.urlToImage}}" alt="image" width="100%">
+        <h6 class="mt-2"> {{display.title}}</h6>
+        <a class="text-decoration-none btn btn-success btn-sm w-50" target="_blank" href="{{display.url}}">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
