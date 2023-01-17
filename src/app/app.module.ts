@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './component/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './component/news/news.component';
-import { TopHeadingComponent } from './newsComponent/top-heading/top-heading.component';
+import { TopHeadingComponent } from './component/top-heading/top-heading.component';
 
 
 @NgModule({

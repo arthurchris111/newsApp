@@ -35,6 +35,7 @@ export class RegistrationFormComponent implements OnInit {
     this.buildRegistrationForm();
     this.PostsService.getPosts();
 
+
   }
 
   // onCreateAndStorePost(postData:postRegistration){
