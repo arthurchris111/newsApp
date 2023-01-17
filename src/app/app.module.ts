@@ -6,10 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginFormComponent } from './component/login-form/login-form.component';
 import { RegistrationFormComponent } from './component/registration-form/registration-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UsersComponent } from './component/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './component/news/news.component';
 import { TopHeadingComponent } from './component/top-heading/top-heading.component';
+import { TechNewsComponent } from './component/tech-news/tech-news.component';
 
 
 @NgModule({
@@ -17,9 +17,9 @@ import { TopHeadingComponent } from './component/top-heading/top-heading.compone
     AppComponent,
     LoginFormComponent,
     RegistrationFormComponent,
-    UsersComponent,
     NewsComponent,
     TopHeadingComponent,
+    TechNewsComponent,
   ],
   imports: [
     BrowserModule,
