@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './component/news/news.component';
 import { TopHeadingComponent } from './component/top-heading/top-heading.component';
+import { TechNewsComponent } from './component/tech-news/tech-news.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TopHeadingComponent } from './component/top-heading/top-heading.compone
     RegistrationFormComponent,
     NewsComponent,
     TopHeadingComponent,
+    TechNewsComponent,
   ],
   imports: [
     BrowserModule,
