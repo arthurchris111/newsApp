@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-top-heading',
   templateUrl: './top-heading.component.html',
@@ -12,4 +11,8 @@ export class TopHeadingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+// this.service.topHeading().subscribe((result)=>{
+//   console.log(result);
+
+// })
 }
