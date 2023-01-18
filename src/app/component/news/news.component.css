@@ -11,7 +11,7 @@
   width: 50%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 0;
+  bottom: 0px;
   left: 0px;
   background-color:rgb(134, 132, 132) !important;
   transform-origin: bottom left;
@@ -22,4 +22,13 @@
   transform: scaleX(1);
   transform-origin: right;
   width: 100%;
+}
+
+.logout{
+  color: rgb(134, 132, 132) !important;
+}
+
+.logout:hover{
+  color:rgb(255, 0, 0) !important;
+  transition: transform 0.25s ease-out;
 }
