@@ -32,3 +32,13 @@
   color:rgb(255, 0, 0) !important;
   transition: transform 0.25s ease-out;
 }
+
+
+.logo:hover{
+  transform: scale(1.5);
+}
+
+.logo{
+    transition: transform .2s;
+
+}

@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container">
-    <a class="navbar-brand galaxy text-success fs-5" routerLink="login">
-      <img src="../../../assets/images/media house.png" alt="" width="30" height="30">GREEN NEWS</a>
+    <a class="navbar-brand  text-success fs-5" routerLink="news" [routerLink]="['/news']"
+      routerLinkActive="router-link-active">
+      <img src="../../../assets/images/media house.png" alt="" class="logo" width="40" height="40">GREEN MEDIA</a>
     <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
