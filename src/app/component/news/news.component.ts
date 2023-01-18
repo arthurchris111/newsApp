@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { newsApiService } from 'src/service/newsApiService';
 
 @Component({
   selector: 'app-news',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:newsApiService) { }
 
   ngOnInit(): void {
   }

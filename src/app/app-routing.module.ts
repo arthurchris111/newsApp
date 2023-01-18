@@ -7,12 +7,12 @@ import { RegistrationFormComponent } from './component/registration-form/registr
 import { NewsComponent } from './component/news/news.component';
 
 const routes: Routes = [
-  // { path: '', component: LoginFormComponent },
-  // { path:'login', component: LoginFormComponent},
-  // { path: 'signup', component: RegistrationFormComponent },
-  // { path:'news', component:NewsComponent},
-  { path: '', component:TopHeadingComponent},
-  // {path:'tech', component:TechNewsComponent}
+  { path: '', component: LoginFormComponent },
+  { path:'login', component: LoginFormComponent},
+  { path: 'signup', component: RegistrationFormComponent },
+  { path:'news', component:NewsComponent},
+  { path: 'topHeading', component:TopHeadingComponent},
+  { path:'tech', component:TechNewsComponent}
 
 
 ];
