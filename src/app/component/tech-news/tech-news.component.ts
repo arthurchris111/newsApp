@@ -7,13 +7,14 @@ import { newsApiService } from 'src/service/newsApiService';
   styleUrls: ['./tech-news.component.css']
 })
 export class TechNewsComponent implements OnInit {
+  techNewsHeaderDisplay:any =[]
 
   constructor(private service:newsApiService) { }
 
   ngOnInit(): void {
+    this.onTechNewsHeader()
   }
 
-  techNewsHeaderDisplay:any =[]
   onTechNewsHeader(){
     this.service.techNewsHeader().subscribe((res)=>{
       console.log(res);
@@ -21,5 +22,7 @@ export class TechNewsComponent implements OnInit {
 
     })
   }
+
+
 
 }

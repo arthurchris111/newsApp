@@ -1,9 +1,19 @@
-
-.urlToImage:hover{
+.urlToImage:hover {
   transform: scale(1.1);
 }
 
-.urlToImage{
-    transition: transform .2s;
+.urlToImage {
+  transition: transform 0.2s;
+}
 
+.urlToImage {
+  height: 150px;
+}
+
+.title {
+  /* text-align: justify; */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

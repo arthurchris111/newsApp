@@ -13,7 +13,7 @@ export class newsApiService {
   }
 
   // techNewsApi
-  techNewsApiUrl = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ea8691f0412345cda5abc05f45368a33"
+  techNewsApiUrl = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ea8691f0412345cda5abc05f45368a33"
 
   techNewsHeader(){
     return this.http.get<any>(this.techNewsApiUrl)
