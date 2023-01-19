@@ -1,3 +1,4 @@
+import { SportsNewsComponent } from './component/sports-news/sports-news.component';
 import { TechNewsComponent } from './component/tech-news/tech-news.component';
 import { TopHeadingComponent } from './component/top-heading/top-heading.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path:'news', component:NewsComponent},
   { path: 'topHeading', component:TopHeadingComponent},
   { path:'tech', component:TechNewsComponent},
-  { path:'business', component:BusinessNewsComponent}
+  { path:'business', component:BusinessNewsComponent},
+  { path: 'sports', component:SportsNewsComponent}
 
 
 ];
