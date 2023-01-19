@@ -12,16 +12,14 @@
             routerLinkActive="router-link-active">Home</a></li>
         <li class="nav-item" id="hover-underline-animation"><a class="nav-link" [routerLink]="['/tech']"
             routerLinkActive="router-link-active">Tech News</a></li>
-        <li class="nav-item mx-lg-4 " id="hover-underline-animation"><a class="nav-link" [routerLink]="['/business']"
-            routerLinkActive="router-link-active">Business
-            News</a>
-        </li>
-        <li class="nav-item" id="hover-underline-animation"><a class="nav-link" routerLink="#">Political News</a></li>
+        <li class="nav-item mx-lg-4" id="hover-underline-animation"><a class="nav-link" [routerLink]="['/business']"
+            routerLinkActive="router-link-active">Business News</a></li>
+        <li class="nav-item" id="hover-underline-animation"><a class="nav-link" routerLink="#">Sports News</a></li>
       </ul>
       <li
         class="nav-item d-flex text-danger ms-lg-4  btn btn-danger border-0 btn-sm bg-transparent logout text-dark fw-bolder">
-        <a class="nav-link" routerLink="#"><img class="logout" src="../../../assets/images/blackLogout.png"
-            alt="logout-image" width="25" height="25">Logout</a>
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active"><img class="logout"
+            src="../../../assets/images/blackLogout.png" alt="logout-image" width="25" height="25">Logout</a>
       </li>
     </div>
   </div>
