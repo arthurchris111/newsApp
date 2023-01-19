@@ -1,1 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand  text-success fs-5" [routerLink]="['#']" routerLinkActive="router-link-active">
+      <img src="../../../assets/images/media house.png" alt="" class="logo" width="40" height="40">GREEN MEDIA</a>
+    <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-lg-4" id="hover-underline-animation"><a class="nav-link" [routerLink]="['/news']"
+            routerLinkActive="router-link-active">Home</a></li>
+        <li class="nav-item" id="hover-underline-animation"><a class="nav-link" [routerLink]="['/tech']"
+            routerLinkActive="router-link-active">Tech News</a></li>
+        <li class="nav-item mx-lg-4 " id="hover-underline-animation"><a class="nav-link" routerLink="#">Business
+            News</a>
+        </li>
+        <li class="nav-item" id="hover-underline-animation"><a class="nav-link" routerLink="#">Political News</a></li>
+      </ul>
+      <li
+        class="nav-item d-flex text-danger ms-lg-4  btn btn-danger border-0 btn-sm bg-transparent logout text-dark fw-bolder">
+        <a class="nav-link" routerLink="#"><img class="logout" src="../../../assets/images/blackLogout.png"
+            alt="logout-image" width="25" height="25">Logout</a>
+      </li>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
+<footer>
+  <p class="text-center my-4">&copy; 2023 Green House Media</p>
+</footer>
