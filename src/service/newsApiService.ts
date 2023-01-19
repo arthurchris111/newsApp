@@ -19,6 +19,12 @@ export class newsApiService {
     return this.http.get<any>(this.techNewsApiUrl)
   }
 
+  //businessNewsApi
+  businessNewsApiUrl = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=ea8691f0412345cda5abc05f45368a33"
+  businessNewsHeader(){
+    return this.http.get<any>(this.businessNewsApiUrl)
+  }
+
 
 
 

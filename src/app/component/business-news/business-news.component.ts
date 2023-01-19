@@ -9,9 +9,19 @@ import { newsApiService } from 'src/service/newsApiService';
 })
 export class BusinessNewsComponent implements OnInit {
 
+  businessNewsHeaderDisplay:any =[]
+
   constructor(private service:newsApiService) { }
 
   ngOnInit(): void {
+    this.onBusinessNewsHeader()
   }
 
+  onBusinessNewsHeader(){
+    this.service.businessNewsHeader().subscribe((result)=>{
+      console.log(result);
+      this.businessNewsHeaderDisplay = result.articles;
+
+    })
+  }
 }
