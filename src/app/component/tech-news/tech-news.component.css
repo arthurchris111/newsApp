@@ -16,3 +16,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+h3,h2,p,h4{
+  font-family: 'Quicksand', sans-serif;
+}
