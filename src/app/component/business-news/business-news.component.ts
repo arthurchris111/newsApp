@@ -11,7 +11,9 @@ export class BusinessNewsComponent implements OnInit {
 
   businessNewsHeaderDisplay:any =[]
 
-  constructor(private service:newsApiService) { }
+  constructor(private service:newsApiService) {
+    console.log('app business news')
+   }
 
   ngOnInit(): void {
     this.onBusinessNewsHeader()
