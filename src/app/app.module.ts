@@ -13,7 +13,6 @@ import { TechNewsComponent } from './component/tech-news/tech-news.component';
 import { BusinessNewsComponent } from './component/business-news/business-news.component';
 import { SportsNewsComponent } from './component/sports-news/sports-news.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { StoriesComponent } from './component/stories/stories.component';
 import { hover } from './directives/hover.directive';
 
 
@@ -28,7 +27,6 @@ import { hover } from './directives/hover.directive';
     BusinessNewsComponent,
     SportsNewsComponent,
     NavbarComponent,
-    StoriesComponent,
     hover
   ],
   imports: [
