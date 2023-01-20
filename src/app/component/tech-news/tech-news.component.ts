@@ -4,25 +4,23 @@ import { newsApiService } from 'src/service/newsApiService';
 @Component({
   selector: 'app-tech-news',
   templateUrl: './tech-news.component.html',
-  styleUrls: ['./tech-news.component.css']
+  styleUrls: ['./tech-news.component.css'],
 })
 export class TechNewsComponent implements OnInit {
-  techNewsHeaderDisplay:any =[]
+  techNewsHeaderDisplay: any = [];
 
-  constructor(private service:newsApiService) { }
+  constructor(private service: newsApiService) {}
 
   ngOnInit(): void {
-    this.onTechNewsHeader()
+    this.onTechNewsHeader();
   }
 
-  onTechNewsHeader(){
-    this.service.techNewsHeader().subscribe((res)=>{
+  onTechNewsHeader() {
+    this.service.techNewsHeader().subscribe((res) => {
       console.log(res);
       this.techNewsHeaderDisplay = res.articles;
-
-    })
+    });
   }
-
 
 
 }
