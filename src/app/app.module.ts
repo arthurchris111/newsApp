@@ -12,6 +12,7 @@ import { TopHeadingComponent } from './component/top-heading/top-heading.compone
 import { TechNewsComponent } from './component/tech-news/tech-news.component';
 import { BusinessNewsComponent } from './component/business-news/business-news.component';
 import { SportsNewsComponent } from './component/sports-news/sports-news.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SportsNewsComponent } from './component/sports-news/sports-news.compone
     TechNewsComponent,
     BusinessNewsComponent,
     SportsNewsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
