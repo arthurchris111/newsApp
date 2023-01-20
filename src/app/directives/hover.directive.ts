@@ -13,7 +13,6 @@ export class hover {
     this.renderer.setStyle(this.element.nativeElement, 'transform', 'scale(1.1)');
     this.renderer.setStyle(this.element.nativeElement, 'transition', 'transform 0.2s');
 
-    // this.renderer.setStyle(this.element.nativeElement, '', '');
   }
   @HostListener('mouseleave') onmouseout() {
     this.renderer.setStyle(this.element.nativeElement, 'transform', 'scale(1)');

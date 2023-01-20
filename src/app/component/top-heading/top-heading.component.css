@@ -2,13 +2,12 @@
   height: 150px;
 }
 
-.title {
-  /* text-align: justify; */
+/* .title {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
+} */
 
 h3,h2,p,h4{
   font-family: 'Quicksand', sans-serif;
