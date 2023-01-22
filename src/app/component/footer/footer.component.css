@@ -23,3 +23,7 @@ a:hover{
 li{
   opacity: 75;
 }
+
+p,a{
+  font-family: 'Quicksand', sans-serif;
+}
