@@ -15,6 +15,7 @@ import { SportsNewsComponent } from './component/sports-news/sports-news.compone
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { hover } from './directives/hover.directive';
 import { FooterComponent } from './component/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,13 +31,15 @@ import { FooterComponent } from './component/footer/footer.component';
     NavbarComponent,
     hover,
     FooterComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,14 +9,14 @@ import { NewsComponent } from './component/news/news.component';
 import { BusinessNewsComponent } from './component/business-news/business-news.component';
 
 const routes: Routes = [
-  { path: '', component: LoginFormComponent },
-  { path:'login', component: LoginFormComponent},
-  { path: 'signup', component: RegistrationFormComponent },
-  { path:'news', component:NewsComponent},
-  { path: 'topHeading', component:TopHeadingComponent},
-  { path:'tech', component:TechNewsComponent},
-  { path:'business', component:BusinessNewsComponent},
-  { path: 'sports', component:SportsNewsComponent}
+  { path: '', component: LoginFormComponent, data: { state: '' }},
+  { path:'login', component: LoginFormComponent,data: { state: 'login' }},
+  { path: 'signup', component: RegistrationFormComponent, data: { state: 'signup'}},
+  { path:'news', component:NewsComponent, data: { state: 'news' }},
+  { path: 'topHeading', component:TopHeadingComponent, data: { state: 'topHeading'}},
+  { path:'tech', component:TechNewsComponent, data: { state: 'tech'}},
+  { path:'business', component:BusinessNewsComponent, data: { state: 'business'}},
+  { path: 'sports', component:SportsNewsComponent, data: { state: 'sports'}}
 
 
 ];
