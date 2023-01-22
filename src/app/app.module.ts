@@ -14,7 +14,6 @@ import { BusinessNewsComponent } from './component/business-news/business-news.c
 import { SportsNewsComponent } from './component/sports-news/sports-news.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { hover } from './directives/hover.directive';
-import { NewsStoriesComponent } from './component/news-stories/news-stories.component';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { NewsStoriesComponent } from './component/news-stories/news-stories.comp
     SportsNewsComponent,
     NavbarComponent,
     hover,
-    NewsStoriesComponent,
   ],
   imports: [
     BrowserModule,
