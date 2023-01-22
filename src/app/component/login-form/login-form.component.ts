@@ -4,6 +4,8 @@ import { PostLogin } from 'src/app/post.model';
 import { PostsService } from 'src/service/post.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
+import { AfterViewInit } from '@angular/core';
+declare var anime: any;
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -14,9 +16,10 @@ export class LoginFormComponent implements OnInit {
   submitted: boolean = false;
   isFetching: boolean = false;
   show: boolean = true;
-
   password: any;
   user: boolean = false;
+
+
 
   constructor(private formBuilder: FormBuilder,private postsService: PostsService, private route: Router) {}
 
@@ -85,4 +88,9 @@ export class LoginFormComponent implements OnInit {
     // this.signUp.reset();
     this.submitted = false;
   }
+
+
+
+
+
 }
