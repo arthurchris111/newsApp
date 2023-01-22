@@ -37,12 +37,12 @@
               <input type='password' class="form-control shadow-sm bg-body rounded" id="floatingPassword"
                 placeholder="Password" formControlName="password">
               <label for="floatingPassword">Password</label>
-              <button class="d-flex float-end border-0 bg-transparent" (click)="togglePassword()">
+              <!-- <button class="d-flex float-end border-0 bg-transparent" (click)="togglePassword()">
                 <img src=" ../assets/images/view.png" alt="Image" class="view img-fluid" height="30" aria-hidden="true"
                   width="30" *ngIf="!show">
                 <img src="../assets/images/hide.png" alt="Image" class="hide img-fluid" height="30" width="30"
                   aria-hidden="true" *ngIf="show">
-              </button>
+              </button> -->
 
               <div class="error"
                 *ngIf="(signUp.get('password')?.invalid && submitted) || signUp.get('password')?.touched">

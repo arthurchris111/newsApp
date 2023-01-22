@@ -4,8 +4,6 @@ import { PostLogin } from 'src/app/post.model';
 import { PostsService } from 'src/service/post.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
-import { AfterViewInit } from '@angular/core';
-declare var anime: any;
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -38,15 +36,15 @@ export class LoginFormComponent implements OnInit {
   }
 
   //toggle hide and show password
-  togglePassword() {
-    if (this.password === 'password') {
-      this.password = 'text';
-      this.show = true;
-    } else {
-      this.password = 'password';
-      this.show = false;
-    }
-  }
+  // togglePassword() {
+  //   if (this.password === 'password') {
+  //     this.password = 'text';
+  //     this.show = true;
+  //   } else {
+  //     this.password = 'password';
+  //     this.show = false;
+  //   }
+  // }
 
   //GET post
   onGetPosts() {
