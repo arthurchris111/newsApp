@@ -38,19 +38,6 @@ export class PostsService {
   //get
    getPosts(){
     return this.http.get<any>('https://newsappuserdetails-default-rtdb.firebaseio.com/posts.json');
-  // .subscribe(responseData => {
-      // const user = responseData.find((a:any)=>{
-      //  return a.email === this.signUp.email.value.email && a.password === this.signUp.password.value.password
-      // });
-  //     console.log(responseData);
-    //    if(user){
-    //     alert('Login Successfully')
-    //     this.signUp.reset()
-    //     this.route.navigate(['news'])
-    //  } else{
-    //   alert('user not found')
-    // }
-  // });
  }
 }
 

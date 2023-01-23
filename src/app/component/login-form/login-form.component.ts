@@ -4,6 +4,8 @@ import { PostLogin } from 'src/app/post.model';
 import { PostsService } from 'src/service/post.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
+
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -40,7 +42,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.signUp;
     this.buildLoginForm();
-    this.onGetPosts;
+    this.login();
     this.password = 'password';
   }
 
@@ -55,10 +57,8 @@ export class LoginFormComponent implements OnInit {
   //   }
   // }
 
-
-
   //GET post
-  onGetPosts() {
+  login() {
     this.isFetching = true;
     this.postsService.getPosts().subscribe({
       next: (responseData: any) => {
@@ -68,10 +68,10 @@ export class LoginFormComponent implements OnInit {
           console.log(responseData[key]);
           userArray.push(responseData[key]);
         }
-        userArray.find((res: any) => {
+        userArray.find((result: any) => {
           this.user =
-            res.email === this.signUp.value.email &&
-            res.password === this.signUp.value.password;
+            result.email === this.signUp.value.email &&
+            result.password === this.signUp.value.password;
           console.log(this.user);
 
           if (this.user) {
@@ -95,13 +95,10 @@ export class LoginFormComponent implements OnInit {
     if (this.signUp.invalid) {
       return;
     } else {
-      this.onGetPosts();
+      this.login();
     }
     // this.signUp.reset();
     this.submitted = false;
   }
-}
-function Typewriter(target: Element | null, arg1: { loop: boolean; typeColor: string; }) {
-  throw new Error('Function not implemented.');
 }
 
