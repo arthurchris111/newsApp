@@ -42,7 +42,6 @@ export class LoginFormComponent implements OnInit {
     this.buildLoginForm();
     this.onGetPosts;
     this.password = 'password';
-    this.typeWriter();
   }
 
   //toggle hide and show password
@@ -56,16 +55,7 @@ export class LoginFormComponent implements OnInit {
   //   }
   // }
 
-  typeWriter() {
-    const target = document.querySelector('.tw');
 
-    const writer:any =  Typewriter(target, {
-      loop: true,
-      typeColor: 'blue',
-    });
-
-    writer.type('A simple syntax makes it easy.').rest(500).start();
-  }
 
   //GET post
   onGetPosts() {
