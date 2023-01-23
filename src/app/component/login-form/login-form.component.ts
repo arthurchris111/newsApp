@@ -17,13 +17,22 @@ export class LoginFormComponent implements OnInit {
   password: any;
   user: boolean = false;
 
-
-
-  constructor(private formBuilder: FormBuilder,private postsService: PostsService, private route: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private postsService: PostsService,
+    private route: Router
+  ) {}
 
   buildLoginForm(): void {
     this.signUp = this.formBuilder.group({
-      email: ['', [Validators.required,Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
+        ],
+      ],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
@@ -33,6 +42,7 @@ export class LoginFormComponent implements OnInit {
     this.buildLoginForm();
     this.onGetPosts;
     this.password = 'password';
+    this.typeWriter();
   }
 
   //toggle hide and show password
@@ -46,6 +56,17 @@ export class LoginFormComponent implements OnInit {
   //   }
   // }
 
+  typeWriter() {
+    const target = document.querySelector('.tw');
+
+    const writer:any =  Typewriter(target, {
+      loop: true,
+      typeColor: 'blue',
+    });
+
+    writer.type('A simple syntax makes it easy.').rest(500).start();
+  }
+
   //GET post
   onGetPosts() {
     this.isFetching = true;
@@ -57,7 +78,10 @@ export class LoginFormComponent implements OnInit {
           console.log(responseData[key]);
           userArray.push(responseData[key]);
         }
-        userArray.find((res: any) => {this.user = res.email === this.signUp.value.email && res.password === this.signUp.value.password;
+        userArray.find((res: any) => {
+          this.user =
+            res.email === this.signUp.value.email &&
+            res.password === this.signUp.value.password;
           console.log(this.user);
 
           if (this.user) {
@@ -86,9 +110,8 @@ export class LoginFormComponent implements OnInit {
     // this.signUp.reset();
     this.submitted = false;
   }
-
-
-
-
-
 }
+function Typewriter(target: Element | null, arg1: { loop: boolean; typeColor: string; }) {
+  throw new Error('Function not implemented.');
+}
+

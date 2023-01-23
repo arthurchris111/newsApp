@@ -3,7 +3,7 @@
     <h4 class="mb-3">TOP HEADLINES
       <hr>
     </h4>
-    <div class="col-lg-3" *ngFor="let display of topHeadingDisplay">
+    <div class="col-lg-3 col-lg-3 col-md-6" *ngFor="let display of topHeadingDisplay">
       <div class="card border-0 mb-4">
         <img hover class="urlToImage" src="{{display.urlToImage}}" alt="image" width="100%">
         <h6 class=" mt-2"> {{display.title | slice:0:90}}</h6>
