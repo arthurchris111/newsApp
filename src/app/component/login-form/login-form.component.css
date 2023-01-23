@@ -26,3 +26,8 @@
 h3,h2,p,h4{
   font-family: 'Quicksand', sans-serif;
 }
+
+.header-text{
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+}
