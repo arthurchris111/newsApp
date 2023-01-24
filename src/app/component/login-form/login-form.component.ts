@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
   signUp!: FormGroup;
   submitted: boolean = false;
   isFetching: boolean = false;
-  show: boolean = true;
+  show: boolean = false;
   password: any;
   user: boolean = false;
 
@@ -42,6 +42,10 @@ export class LoginFormComponent implements OnInit {
     this.buildLoginForm();
     // this.login();
     this.password = 'password';
+  }
+
+  togglePassword() {
+    this.show = !this.show;
   }
 
   //login
