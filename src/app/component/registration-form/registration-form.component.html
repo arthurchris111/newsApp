@@ -64,9 +64,15 @@
 
             <!-- password -->
             <div class="form-floating mb-3">
-              <input type="password" class="form-control shadow-sm bg-body rounded" id="floatingPassword"
-                placeholder="Password" formControlName="password" #pw>
+              <input [type]="show?'text':'password'" class="form-control shadow-sm bg-body rounded"
+                id="floatingPassword" placeholder="Password" formControlName="password" #pw>
               <label for="floatingPassword">Password</label>
+              <span class="togglePassword float-end opacity-75">
+                <img (click)="passwordToggle()" src=" ../assets/images/view.png" alt="Image" class="view img-fluid"
+                  height="25" aria-hidden="true" width="25" *ngIf="!show">
+                <img (click)="passwordToggle()" src="../assets/images/hide.png" alt="Image" class="hide img-fluid"
+                  height="25" width="25" aria-hidden="true" *ngIf="show">
+              </span>
               <div class="error"
                 *ngIf="(registration.get('password')?.invalid && submitted) || registration.get('password')?.touched && userSubmitted">
                 <small class="text-danger" *ngIf="registration.get('password')?.errors?.['required'] ">

@@ -10,3 +10,8 @@
 h3,h2,p,h4{
   font-family: 'Quicksand', sans-serif;
 }
+
+.togglePassword{
+  margin-top: -48px;
+  padding: 10px;
+}
