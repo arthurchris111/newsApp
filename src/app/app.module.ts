@@ -17,7 +17,6 @@ import { hover } from './directives/hover.directive';
 import { FooterComponent } from './component/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     hover,
     FooterComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -39,9 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

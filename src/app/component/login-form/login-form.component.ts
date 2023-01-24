@@ -4,8 +4,6 @@ import { PostLogin } from 'src/app/post.model';
 import { PostsService } from 'src/service/post.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
-
-
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -22,7 +20,7 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private postsService: PostsService,
-    private route: Router
+    private route: Router // private toast: NgToastService
   ) {}
 
   buildLoginForm(): void {
@@ -42,50 +40,42 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.signUp;
     this.buildLoginForm();
-    this.login();
+    // this.login();
     this.password = 'password';
   }
 
-  //toggle hide and show password
-  // togglePassword() {
-  //   if (this.password === 'password') {
-  //     this.password = 'text';
-  //     this.show = true;
-  //   } else {
-  //     this.password = 'password';
-  //     this.show = false;
-  //   }
-  // }
-
-  //GET post
+  //login
   login() {
     this.isFetching = true;
     this.postsService.getPosts().subscribe({
       next: (responseData: any) => {
         this.isFetching = false;
         const userArray = [];
+
         for (const key in responseData) {
           console.log(responseData[key]);
           userArray.push(responseData[key]);
         }
-        userArray.find((result: any) => {
-          this.user =
-            result.email === this.signUp.value.email &&
-            result.password === this.signUp.value.password;
-          console.log(this.user);
 
-          if (this.user) {
-            this.route.navigate(['news']);
-            alert('Login Successfully');
-          } else {
-            alert('user not found');
-          }
+        // console.log(userArray, '---------userArray');
+        // console.log(this.signUp.value, '---------this.signUp.value');
+
+        const user = userArray.find((result: any) => {
+          return (
+            result.email === this.signUp.value.email &&
+            result.password === this.signUp.value.password
+          );
         });
+
+        // console.log(user, '---------this.user');
+
+        if (user) {
+          this.route.navigate(['news']);
+          alert('Login Successfully');
+        } else {
+          alert('user not found');
+        }
       },
-      // ,
-      // error: (err: any) => {
-      //   alert(err);
-      // },
     });
   }
 
@@ -101,4 +91,3 @@ export class LoginFormComponent implements OnInit {
     this.submitted = false;
   }
 }
-
