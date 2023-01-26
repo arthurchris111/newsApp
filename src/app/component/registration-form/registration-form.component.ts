@@ -1,5 +1,3 @@
-import { PostLogin } from 'src/app/post.model';
-// import { UsersComponent } from './../users/users.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -48,10 +46,6 @@ export class RegistrationFormComponent implements OnInit {
     this.buildRegistrationForm();
     this.PostsService.getPosts();
   }
-
-  // onCreateAndStorePost(postData:postRegistration){
-  //   this.PostsService.createAndStorePost(postData.name,postData.surname,postData.email,postData.password)
-  // }
 
   passwordToggle() {
     this.show = !this.show;
