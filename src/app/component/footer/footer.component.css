@@ -12,7 +12,7 @@ a:hover{
 }
 
 .logo:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .logo{
@@ -26,6 +26,6 @@ li{
 
 p,a,h5{
   font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
 }
 
