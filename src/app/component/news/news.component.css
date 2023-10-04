@@ -3,9 +3,9 @@
   display: inline-block;
   position: relative;
   color: rgb(134, 132, 132) !important;
-}
+} */
 
-#hover-underline-animation:after {
+/* #hover-underline-animation:after {
   content: '';
   position: absolute;
   width: 50%;
@@ -16,8 +16,8 @@
   background-color:rgb(134, 132, 132) !important;
   transform-origin: bottom left;
   transition: transform 0.25s ease-out;
-}
-
+} */
+/*
 #hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: right;
@@ -26,3 +26,4 @@
 
 .logout{
   color: rgb(134, 132, 132) !important;
+} */
